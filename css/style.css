@@ -1,7 +1,7 @@
 body {
     font-family: Verdana, sans-serif; 
     font-size:0.8em;
-    background: url("../img/grandCentral.jpg") no-repeat center center fixed;
+    background: url('../img/grandCentral.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
