@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Geolocation</title>
+<meta charset="utf-8">
+    
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans|Berkshire+Swash|Righteous|Kaushan+Script|Fugaz+One|Sail|Molle:400Italic|Mr+Bedfort|Poiret+One' rel='stylesheet' type='text/css'>    
+
+<link rel="stylesheet" href="css/style.css">    
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body class="site">
+  <main class="site-content"> 
+    <div id="main-container">
+    <header>
+        <h1>Geolocation Example</h1>
+    </header>
+    
+    
+    <button onclick="getLocation()">Find out where you are!</button>
+    <h2 id="location"></h2>
+    </div>
+  </main><!-- main site content -->    
+    
+    <footer>
+    <p>&copy; 2015 Joei Leonard. All rights reserved.</p>
+    </footer>
+    
+    <script>
+// Find the HTML element with the ID of demo and store it in the x variable
+var x = document.getElementById("location");
+ 
+function getLocation() {
+	// If the browser knows the geolocation
+    if (navigator.geolocation) {
+		// Get the current position of the browser and then go do the showPosition function
+        navigator.geolocation.getCurrentPosition(showPosition);
+	// If the browser doesn't know the geolocation
+    } else { 
+		// Let the user know that geolocation is not possible
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+ 
+// Show the user where they are
+function showPosition(position) {
+	// Place the Latitude and Longitude of the user inside the demo element
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;	
+}
+</script>
+    
+</body>
+</html> 
